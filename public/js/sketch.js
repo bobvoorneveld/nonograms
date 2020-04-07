@@ -1,3 +1,14 @@
+/**
+Nonogram:
+- id (int)
+- created (datetime)
+- modified (datetime)
+- title (string) ("Eye")
+- rows (int) (5)
+- cols (int) (10)
+- solution (string) ("1,0,1,0,1,0,1,0,1,0;0,1,1,1,1,1,1,1,0,1;1,1,0,0,1,1,0,0,1,0;1,0,0,0,1,1,0,0,1,1;0,1,1,1,1,1,1,1,0,0;")
+*/
+
 let solution = [
   [1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
   [0, 1, 1, 1, 1, 1, 1, 1, 0, 1],

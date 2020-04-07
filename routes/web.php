@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Nonogram;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,7 @@ Route::get('/contact', function () {
 });
 
 Route::get('/example', function () {
+    $nonograms = Nonogram::first()->get();
+    $nonogram = $nonograms[0];
     return view('example');
 });
