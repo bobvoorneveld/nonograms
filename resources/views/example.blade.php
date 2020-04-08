@@ -6,7 +6,7 @@
     <h1>{{ $nonogram->title }}</h1>
 
     <script>
-        let solution = {{ $solution }};
+        let solution = {{ $nonogram->jsonSolution() }};
     </script>
 </div>
 
