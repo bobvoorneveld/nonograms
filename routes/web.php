@@ -22,9 +22,5 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/example', function () {
-    $nonograms = Nonogram::first()->get();
-    $nonogram = $nonograms[0];
 
-    return view('example', compact('nonogram'));
-});
+Route::resource('nonograms', 'NonogramController');
