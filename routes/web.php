@@ -25,5 +25,12 @@ Route::get('/contact', function () {
 Route::get('/example', function () {
     $nonograms = Nonogram::first()->get();
     $nonogram = $nonograms[0];
-    return view('example');
+    $solution = explode(';', $nonogram->solution);
+    for ($i = 0; $i < count($solution); $i++) {
+        $solution[$i] = '[' . $solution[$i] . ']';
+    }
+    $solution = join(',', $solution);
+    $solution = '[' . $solution . ']';
+
+    return view('example', compact('nonogram', 'solution'));
 });

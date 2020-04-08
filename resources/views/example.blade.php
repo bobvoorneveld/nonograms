@@ -3,7 +3,11 @@
 
 @section('main')
 <div class="starter-template">
-    Contact
+    <h1>{{ $nonogram->title }}</h1>
+
+    <script>
+        let solution = {{ $solution }};
+    </script>
 </div>
 
 <script src="js/vendor/p5.js"></script>
