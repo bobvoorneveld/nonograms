@@ -14,7 +14,8 @@ class NonogramController extends Controller
      */
     public function index()
     {
-        //
+        $nonograms = Nonogram::all();
+        return view('nonograms.index', compact('nonograms'));
     }
 
     /**
@@ -41,7 +42,7 @@ class NonogramController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Nonogram  $nonogram
      * @return \Illuminate\Http\Response
      */
     public function show(Nonogram $nonogram)

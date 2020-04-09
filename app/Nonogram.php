@@ -19,4 +19,8 @@ class Nonogram extends Model
         $solution = '[' . $solution . ']';
         return $solution;
     }
+
+    function path() {
+        return '/nonograms/' . $this->id;
+    }
 }
