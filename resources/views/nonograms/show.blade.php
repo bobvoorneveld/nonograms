@@ -5,6 +5,7 @@
 <div class="starter-template">
     <h1>{{ $nonogram->title }}</h1>
 
+    <div id="nonogram-container"></div>
     <script>
         let solution = {{ $nonogram->jsonSolution() }};
     </script>

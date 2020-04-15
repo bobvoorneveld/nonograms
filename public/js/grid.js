@@ -110,7 +110,10 @@ class Grid {
 
     showHorizontal() {
         for (let j=0; j < this.rows; j++) {
-            for(let i=0; i < this.maxCellsHorizontal; i++) {
+            let solutionRow = this.horizontal[j];
+            solutionRow = solutionRow.filter((solution) => solution > 0);
+
+            for(let i = this.maxCellsHorizontal - 1; i >= 0; i--) {
                 stroke(51);
                 fill(255);
                 strokeWeight(1);
@@ -124,8 +127,9 @@ class Grid {
                 fill(51);
                 textAlign(CENTER, CENTER);
                 textSize(20);
-                if(this.horizontal[j][i]) {
-                    text(this.horizontal[j][i],                     
+                const solution = solutionRow.pop();
+                if(solution) {
+                    text(solution,                     
                         i * this.cellSize + this.cellSize / 2, 
                         (j + this.maxCellsVertical) * this.cellSize + this.cellSize / 2);
                 }
@@ -135,7 +139,10 @@ class Grid {
 
     showVertical() {
         for (let i=0; i < this.cols; i++) {
-            for(let j=0; j < this.maxCellsHorizontal; j++) {
+            let solutionCol = this.vertical[i];
+            solutionCol = solutionCol.filter((solution) => solution > 0);
+
+            for(let j = this.maxCellsVertical - 1; j >= 0; j--) {
                 stroke(51);
                 fill(255);
                 strokeWeight(1);
@@ -149,8 +156,9 @@ class Grid {
                 fill(51);
                 textSize(20);
                 textAlign(CENTER, CENTER);
-                if(this.vertical[i][j]) {
-                    text(this.vertical[i][j],                     
+                const solution = solutionCol.pop();
+                if(solution) {
+                    text(solution,                     
                         (i + this.maxCellsHorizontal) * this.cellSize  + this.cellSize / 2, 
                         j * this.cellSize+ this.cellSize / 2);
                 }

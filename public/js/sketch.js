@@ -19,15 +19,24 @@ Nonogram:
 
 let grid;
 let cellSize;
+let canvasWidth = 800;
+let canvas;
 
 function setup() {
-  createCanvas(800, 800);
+  canvas = createCanvas(canvasWidth, canvasWidth);
+  canvas.parent('nonogram-container');
+  windowResized();
 
   cellSize = 40;
   grid = new Grid(solution, cellSize);
   grid.setup();
 }
 
+// Called by p5js when window size changes.
+function windowResized() {
+  canvasWidth = $('#nonogram-container').width();
+  resizeCanvas(canvasWidth, canvasWidth);
+}
 
 function draw() {
   background(255);
